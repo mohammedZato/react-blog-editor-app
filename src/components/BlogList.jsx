@@ -1,18 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { handleDeleteBlog, handleOnchangeValues, setBlogListOnPageLoad, setCurrentEdittedBlogId } from "../Store/BlogSlice";
+import { handleDeleteBlog, handleOnchangeValues, setCurrentEdittedBlogId } from "../Store/BlogSlice";
 
 export default function BlogList() {
     const { blog } = useSelector(state => state);
     const { blogList } = blog;
 
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(setBlogListOnPageLoad({
-            blogs: JSON.parse(localStorage.getItem("blogs" || []))  
-        }))
-    }, []);
 
     function onDelete(getCurrentBlog) {
         dispatch(handleDeleteBlog({
@@ -36,7 +30,7 @@ export default function BlogList() {
                 blogList &&
                 blogList.map(singleBlogItem => {
                     return (
-                        <div key={singleBlogItem.id} class="border p-3 mt-3 rounded-md shadow shadow-slate-500">
+                        <div key={singleBlogItem.id} class="border p-3 mt-3 rounded-md shadow shadow-slate-400">
                             <div class="">
                                 <h2><span class="font-medium">Title</span>: {singleBlogItem.title}</h2>
                                 <h2><span class="font-medium">Description</span>: {singleBlogItem.description}</h2>

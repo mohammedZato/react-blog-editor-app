@@ -35,10 +35,6 @@ export const blogSlice = createSlice({
             localStorage.setItem("blogs", JSON.stringify(state.blogList));
         },
 
-        setBlogListOnPageLoad: (state, action) => {
-            state.blogList = action.payload.blogs
-        },
-
         handleDeleteBlog: (state, action) => {
             const { payload } = action;
             const { currentBlogId } = payload;
@@ -70,5 +66,5 @@ export const blogSlice = createSlice({
     }
 });
 
-export const { handleOnchangeValues, handleAddNewBlog, setBlogListOnPageLoad, handleDeleteBlog, setCurrentEdittedBlogId, handleEditBlog  } = blogSlice.actions;
+export const { handleOnchangeValues, handleAddNewBlog, handleDeleteBlog, setCurrentEdittedBlogId, handleEditBlog  } = blogSlice.actions;
 export default blogSlice.reducer;
