@@ -32,7 +32,6 @@ export const blogSlice = createSlice({
                 title: "",
                 description: ""
             }
-            localStorage.setItem("blogs", JSON.stringify(state.blogList));
         },
 
         handleDeleteBlog: (state, action) => {
@@ -42,8 +41,6 @@ export const blogSlice = createSlice({
             cpyBlogList = cpyBlogList.filter(singleBlog => singleBlog.id !== currentBlogId);
 
             state.blogList = cpyBlogList;
-
-            localStorage.setItem("blogs", JSON.stringify(state.blogList));
         },
 
         setCurrentEdittedBlogId: (state, action) => {
@@ -61,7 +58,6 @@ export const blogSlice = createSlice({
                 ...state.blogForm
             };
             state.blogList = cpyBlogList;
-            localStorage.setItem("blogs", JSON.stringify(cpyBlogList));
         }
     }
 });
