@@ -36,7 +36,7 @@ export default function BlogList() {
                                 <h2 class="text-black"><span class="font-medium text-black">Description</span>: {singleBlogItem.description}</h2>
                             </div>
                             <div class="mt-3">
-                                <button onClick={() => onEdit(singleBlogItem)} class="bg-black text-white rounded-md mr-2">Edit Blog</button>
+                                <button onClick={() => onEdit(singleBlogItem)} class="bg-black text-white rounded-md mr-3">Edit Blog</button>
                                 <button onClick={() => onDelete(singleBlogItem)} class="bg-red-500 rounded-md">Delete Blog</button>
                             </div>
                         </div>
